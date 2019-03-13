@@ -13,7 +13,7 @@ bool ok(int q[], int c) { // Finish this code
 	for(int i=0; i<c; i++){
 		if ( q[c] == q[i])
 			return false;
-		if ( ((mp[i][q[i]] > mp[i][q[c]]) && (wp[q[i]][i] > wp[q[i]][c])) || ((mp[c][q[i]] > mp[c][q[c]]) && (wp[q[c]][c] > wp[q[c]][i])) ){
+        if ( (mp[i][q[c]] < mp[i][q[i]] && wp[q[c]][i] < wp[q[c]][c])|| (wp[q[i]][c] < wp[q[i]][i] && mp[c][q[i]] < mp[c][q[c]])){
 			return false;
 		}
 	}
